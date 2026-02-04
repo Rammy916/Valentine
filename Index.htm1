@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Be My Valentine 💖</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffb6c1, #ffe4e1);
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #d6336c;
+    }
+    button {
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+    #yes {
+      background-color: #ff4d6d;
+      color: white;
+    }
+    #no {
+      background-color: #adb5bd;
+      color: white;
+    }
+    #message {
+      margin-top: 30px;
+      font-size: 20px;
+      color: #6a040f;
+    }
+    .hearts {
+      font-size: 30px;
+      animation: float 1s infinite alternate;
+    }
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will you be my Valentine? 💌</h1>
+
+  <button id="yes" onclick="yesClicked()">Yes ❤️</button>
+  <button id="no" onclick="noClicked()">No 😢</button>
+
+  <div id="message"></div>
+
+  <script>
+    const sadMessages = [
+      "Oh no 😢 try again...",
+      "My heart is breaking 💔",
+      "Please don’t do this to me 🥺",
+      "I’ll cry myself to sleep 😭",
+      "Last chance… pretty please? 🥹"
+    ];
+
+    let noCount = 0;
+
+    function noClicked() {
+      document.getElementById("message").innerHTML =
+        sadMessages[noCount % sadMessages.length];
+      noCount++;
+    }
+
+    function yesClicked() {
+      document.body.innerHTML = `
+        <h1>I knew you’d say YES! 💕</h1>
+        <p>You make my heart so happy 🥰</p>
+        <p class="hearts">❤️ 💖 💘 💝 💞</p>
+        <p>Happy Valentine’s, my love 💌</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
